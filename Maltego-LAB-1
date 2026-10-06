@@ -1,0 +1,110 @@
+# Persona Interest, Passive Reconnaissance Using the Maltego Tool
+
+## Objective
+
+Use Maltego’s Person of Interest transforms to explore publicly available links between a person, a company email domain, and a LinkedIn profile.
+
+## Procedure
+
+What you need to do before doing this lab
+
+1. Check whether maltego is installed or not using cmd- 'which maltego' on your kali 
+2.If mising then, Install Maltego using cmd
+```bash
+sudo apt update
+sudo apt install maltego -y
+
+3. Account Setup
+Maltego Community Edition requires an account.
+Steps:
+
+1. Open Maltego.
+2. Select Community Edition.
+3. Register an account.
+4. Login.
+5. Configure transforms
+
+### Step 1: Install Person of Interest transforms
+
+1. Open the **Transforms** section in Maltego.
+2. Go to **Maltego Data Hub**.
+3. Find and install **Person of Interest** transforms.
+
+### Step 2: Add the employee’s Person entity
+
+1. Search for **Person** in the Entity Palette.
+2. Drag the **Person** entity onto the graph.
+3. Change the default name, **John Doe**, to the person’s name. In this exercise, use **Rahul Mishra**.
+
+### Step 3: Find the person’s GitHub profile and company email
+
+1. Right-click the **Rahul Mishra** entity and select **Run Transform**.
+2. Search for **POI** in the transform list.
+3. Scroll down in the transforms list of **Person of Interest** and look for **[POI]To github profiles[googles]**.
+4. Run the transforms to find the person’s GitHub profile.
+5. After finding the github profile, on right-hand side below overview there is detail view. In detail view there is view profile, open the web address present there. Once you find github, you can access other social media handles of your target.
+6. Again click on the person entity(Rahul Mishra), this time when you do the run transform, look for **[POI]Find email Addresses(of known company)[Hunter]**, click on it and you will get the email address of the person which is associated with the company
+
+### Step 4: Find other email addresses on the same host
+
+1. Right-click the company email entity and select **Run Transform**.
+2. Search for and run **[POI]to Other Email Addresses with Same Host**.
+3. Review the returned email entities. In this exercise, the director’s name is **Gitesh Patle**.
+
+### Step 5: Extract the director’s Person entity
+
+1. Select the email address associated with **Gitesh Patle**.
+2. Right-click it and select **Run Transform**.
+3. Run **[POI] Extract Person**.
+4. Review the resulting **Gitesh Patle** Person entity.
+
+### Step 6: Find the LinkedIn profile
+
+1. Right-click the **Gitesh Patle** Person entity and select **Run Transform**.
+2. Run **POI to LinkedIn Profiles**.
+3. Review the returned profile and check whether it appears to match.
+4. Open the profile to inspect its publicly available information.
+
+## Result
+
+The graph shows the transform path from Rahul Mishra’s Person entity to a company email, other email addresses on the same host, Gitesh Patle’s Person entity, and a possible LinkedIn profile.
+
+## Note
+
+Transform results may be incomplete or may identify the wrong person. Treat them as possible matches and verify them before drawing conclusions. Use this process only with appropriate authorization.
+Maltego version - 4.12.1.( transform names may update with vas version updates)
+
+##Main operations of maltego that we covered##
+
+*Email Investigation*
+
+```
+Email Address
+
+↓
+
+Domain
+
+↓
+
+Associated Accounts
+```
+
+---
+
+## Person Investigation
+
+```
+Person
+
+↓
+
+Social Media
+
+↓
+
+Email
+
+↓
+
+Organization
