@@ -1,6 +1,165 @@
-# Persona Interest, Passive Reconnaissance Using the Maltego Tool
+# Person OF Interest Passive Reconnaissance Using Maltego Tool
 
-## Objective
+## 1. Tool Overview and History
+
+**Maltego** is an open-source intelligence (**OSINT**) and graphical link-analysis tool used to discover relationships between people, organizations, domains, websites, infrastructure, and digital assets.
+Maltego was originally developed by **Paterva** and is now maintained by **Maltego Technologies GmbH**.
+Unlike command-line reconnaissance tools such as `theHarvester`, `DNSRecon`, or `Amass`, Maltego provides a **visual investigation platform** where collected information is displayed as interconnected graphs.
+
+Basic workflow:
+
+```text
+Investigation Target
+
+        |
+        v
+
+      Maltego
+
+        |
+        v
+
+Transforms
+
+        |
+        v
+
+Public Data Sources
+
+        |
+        v
+
+Relationship Graph
+
+        |
+        v
+
+Intelligence Report
+```
+
+---
+
+## 2. Why Maltego Is Important in Cybersecurity
+
+Modern investigations require understanding relationships between different digital entities.
+
+Example:
+
+```text
+Company Domain
+
+       |
+
+       +------ Employees
+
+       |
+
+       +------ Email Addresses
+
+       |
+
+       +------ IP Addresses
+
+       |
+
+       +------ Websites
+
+       |
+
+       +------ Social Media Accounts
+```
+
+Maltego helps analysts visualize these connections.
+
+It is used by:
+
+- Cybersecurity analysts
+- Digital forensic investigators
+- Law enforcement agencies
+- Threat intelligence teams
+- Penetration testers
+- Red teams
+
+---
+
+## 3. Understanding Link Analysis
+
+Link analysis identifies relationships between different entities.
+
+Example:
+
+```text
+john@example.com
+
+        |
+
+        |
+
+example.com
+
+        |
+
+        |
+
+203.0.113.10
+
+        |
+
+        |
+
+Web Server
+```
+
+Maltego converts collected information into a visual investigation graph.
+
+---
+
+## 4. Maltego vs Other OSINT Tools
+
+| Feature | Maltego | theHarvester | Amass | SpiderFoot |
+|----------|---------|--------------|-------|------------|
+| Graph Visualization | Excellent | No | Limited | Yes |
+| Email Discovery | Yes | Excellent | Limited | Yes |
+| Domain Discovery | Yes | Yes | Excellent | Yes |
+| Relationship Mapping | Excellent | No | Limited | Good |
+| Social Media Intelligence | Yes | No | No | Yes |
+| Automated Transforms | Excellent | No | No | Good |
+| Investigation Workflow | Excellent | Basic | Technical | Good |
+
+---
+
+## 5. Key Features
+
+| Feature | Description |
+|----------|-------------|
+| Graph Visualization | Displays relationships visually |
+| Transforms | Automated information queries |
+| Entity Discovery | Finds domains, people, IPs, emails |
+| Infrastructure Mapping | Maps networks and servers |
+| OSINT Integration | Connects with external sources |
+| Evidence Documentation | Supports investigation reports |
+| Collaboration | Allows sharing investigations |
+
+---
+
+## 6. Understanding Maltego Entities
+
+Maltego works with different entity types.
+
+Examples:
+
+| Entity | Description |
+|--------|-------------|
+| Domain | Website domain |
+| IP Address | Network address |
+| Email Address | Email identity |
+| Person | Individual identity |
+| Organization | Company entity |
+| URL | Web resource |
+| DNS Name | Hostname |
+| Phone Number | Contact information |
+
+##7 Objective
 
 Use Maltego’s Person of Interest transforms to explore publicly available links between a person, a company email domain, and a LinkedIn profile.
 
